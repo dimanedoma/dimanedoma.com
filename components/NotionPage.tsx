@@ -12,10 +12,10 @@ import {
   NotionRenderer,
   useNotionContext
 } from 'react-notion-x'
+import { EmbeddedTweet, TweetNotFound, TweetSkeleton } from 'react-tweet'
 // DIMANEDOMA_CUSTOMIZATION
 import Twemoji from 'react-twemoji'
 // end DIMANEDOMA_CUSTOMIZATION
-import { EmbeddedTweet, TweetNotFound, TweetSkeleton } from 'react-tweet'
 import { useSearchParam } from 'react-use'
 
 import type * as types from '@/lib/types'
@@ -341,8 +341,6 @@ export function NotionPage({
           footer={footer}
         />
       </Twemoji>
-
-      <GitHubShareButton />
     </>
   )
   // end DIMANEDOMA_CUSTOMIZATION
