@@ -102,6 +102,9 @@ importers:
       '@types/react-body-classname':
         specifier: ^1.1.10
         version: 1.1.10
+      '@types/react-twemoji':
+        specifier: ^0.4.3
+        version: 0.4.3
       '@types/rss':
         specifier: ^0.0.32
         version: 0.0.32
@@ -582,6 +585,9 @@ packages:
 
   '@types/react-body-classname@1.1.10':
     resolution: {integrity: sha512-BS5V6xbn9m76WA13ied9xYXVacIf70/alT4AfPNiJmyAJy3LnmPCFSI31aS67DeVvekVLidXhmmk42Z0272N7g==}
+
+  '@types/react-twemoji@0.4.3':
+    resolution: {integrity: sha512-VzWkjmO8yJ31JSWgQhe0LCLU3FxcurTOklECm9p8v1xI/WfUBOGbSrqPjQPL46LE4oOqfrYIQ+0LM/8I6A8EDQ==}
 
   '@types/react@19.1.13':
     resolution: {integrity: sha512-hHkbU/eoO3EG5/MZkuFSKmYqPbSVk5byPFa3e7y/8TybHiLMACgI8seVYlicwk7H5K/rI2px9xrQp/C+AUDTiQ==}
@@ -2889,6 +2895,10 @@ snapshots:
   '@types/prismjs@1.26.5': {}
 
   '@types/react-body-classname@1.1.10':
+    dependencies:
+      '@types/react': 19.1.13
+
+  '@types/react-twemoji@0.4.3':
     dependencies:
       '@types/react': 19.1.13
 
