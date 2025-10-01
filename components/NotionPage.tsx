@@ -12,6 +12,9 @@ import {
   NotionRenderer,
   useNotionContext
 } from 'react-notion-x'
+// DIMANEDOMA_CUSTOMIZATION
+import Twemoji from 'react-twemoji'
+// end DIMANEDOMA_CUSTOMIZATION
 import { EmbeddedTweet, TweetNotFound, TweetSkeleton } from 'react-tweet'
 import { useSearchParam } from 'react-use'
 
@@ -287,8 +290,9 @@ export function NotionPage({
   const socialDescription =
     getPageProperty<string>('Description', block, recordMap) ||
     config.description
-
-  return (
+  
+  // DIMANEDOMA_CUSTOMIZATION
+    return (
     <>
       <PageHead
         pageId={pageId}
@@ -303,32 +307,43 @@ export function NotionPage({
       {isLiteMode && <BodyClassName className='notion-lite' />}
       {isDarkMode && <BodyClassName className='dark-mode' />}
 
-      <NotionRenderer
-        bodyClassName={cs(
-          styles.notion,
-          pageId === site.rootNotionPageId && 'index-page'
-        )}
-        darkMode={isDarkMode}
-        components={components}
-        recordMap={recordMap}
-        rootPageId={site.rootNotionPageId}
-        rootDomain={site.domain}
-        fullPage={!isLiteMode}
-        previewImages={!!recordMap.preview_images}
-        showCollectionViewDropdown={false}
-        showTableOfContents={showTableOfContents}
-        minTableOfContentsItems={minTableOfContentsItems}
-        defaultPageIcon={config.defaultPageIcon}
-        defaultPageCover={config.defaultPageCover}
-        defaultPageCoverPosition={config.defaultPageCoverPosition}
-        mapPageUrl={siteMapPageUrl}
-        mapImageUrl={mapImageUrl}
-        searchNotion={config.isSearchEnabled ? searchNotion : undefined}
-        pageAside={pageAside}
-        footer={footer}
-      />
+      <Twemoji
+        options={{
+          className: 'twemoji',
+          // Optional: use Twemoji SVGs via jsDelivr (nice and crisp)
+          base: 'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/',
+          folder: 'svg',
+          ext: '.svg'
+        }}
+      >
+        <NotionRenderer
+          bodyClassName={cs(
+            styles.notion,
+            pageId === site.rootNotionPageId && 'index-page'
+          )}
+          darkMode={isDarkMode}
+          components={components}
+          recordMap={recordMap}
+          rootPageId={site.rootNotionPageId}
+          rootDomain={site.domain}
+          fullPage={!isLiteMode}
+          previewImages={!!recordMap.preview_images}
+          showCollectionViewDropdown={false}
+          showTableOfContents={showTableOfContents}
+          minTableOfContentsItems={minTableOfContentsItems}
+          defaultPageIcon={config.defaultPageIcon}
+          defaultPageCover={config.defaultPageCover}
+          defaultPageCoverPosition={config.defaultPageCoverPosition}
+          mapPageUrl={siteMapPageUrl}
+          mapImageUrl={mapImageUrl}
+          searchNotion={config.isSearchEnabled ? searchNotion : undefined}
+          pageAside={pageAside}
+          footer={footer}
+        />
+      </Twemoji>
 
       <GitHubShareButton />
     </>
   )
+  // end DIMANEDOMA_CUSTOMIZATION
 }

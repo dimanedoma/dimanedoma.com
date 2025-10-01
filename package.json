@@ -53,6 +53,7 @@
     "react-dom": "^19.1.1",
     "react-notion-x": "^7.5.0",
     "react-tweet": "^3.2.2",
+    "react-twemoji": "^0.6.0",
     "react-use": "^17.6.0",
     "rss": "^1.2.2"
   },

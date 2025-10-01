@@ -60,3 +60,12 @@ body {
 ::-webkit-scrollbar-track {           
     background-color: var(--bg-color);
 }
+
+/* DIMANEDOMA_CUSTOMIZATION */
+img.twemoji {
+  height: 1em;
+  width: 1em;
+  margin: 0 0.05em 0 0.1em;
+  vertical-align: -0.1em;
+}
+/* end DIMANEDOMA_CUSTOMIZATION */
